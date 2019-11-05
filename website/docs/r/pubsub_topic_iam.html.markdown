@@ -57,7 +57,7 @@ resource "google_pubsub_topic_iam_policy" "editor" {
 resource "google_pubsub_topic_iam_binding" "editor" {
 	project = "${google_pubsub_topic.example.project}"
 	topic = "${google_pubsub_topic.example.name}"
-	role = "roles/viewer"
+	role = "roles/pubsub.editor"
 	members = [
 		"user:jane@example.com",
 	]
@@ -70,7 +70,7 @@ resource "google_pubsub_topic_iam_binding" "editor" {
 resource "google_pubsub_topic_iam_member" "editor" {
 	project = "${google_pubsub_topic.example.project}"
 	topic = "${google_pubsub_topic.example.name}"
-	role = "roles/viewer"
+	role = "roles/pubsub.editor"
 	member = "user:jane@example.com"
 }
 ```
